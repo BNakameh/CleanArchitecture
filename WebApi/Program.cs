@@ -10,8 +10,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services
     .AddApplication()
-    .AddInfrastructure()
-    .AddPresentation();
+    .AddPresentation()
+    .AddInfrastructure(builder.Configuration);
 
 builder.Host.UseSerilog((context, conf) =>
         conf.ReadFrom.Configuration(context.Configuration));
